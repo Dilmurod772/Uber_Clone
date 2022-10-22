@@ -1,9 +1,3 @@
-//
-//  Uber_CloneTests.swift
-//  Uber_CloneTests
-//
-//  Created by Karimov Dilmurod on 19/10/22.
-//
 
 import XCTest
 @testable import Uber_Clone
