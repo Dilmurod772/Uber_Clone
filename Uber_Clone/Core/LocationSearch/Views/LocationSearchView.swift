@@ -7,6 +7,7 @@ struct LocationSearchView: View {
     @State private var startLocationText = ""
     @Binding var mapState: MapViewState
     @EnvironmentObject var viewModel: LocationSearchViewModel
+    @State private var showingAlert = false
     
     var body: some View {
         
@@ -65,9 +66,10 @@ struct LocationSearchView: View {
                 }
             }
             
+            
         }
         .background(.white)
-        
+
         
     }
 }

@@ -7,7 +7,12 @@
 		<key>Uber_Clone.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>0</integer>
+			<integer>26</integer>
+		</dict>
+		<key>Uber_Clone_version.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>26</integer>
 		</dict>
 	</dict>
 </dict>

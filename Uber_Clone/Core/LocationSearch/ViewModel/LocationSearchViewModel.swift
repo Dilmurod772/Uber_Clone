@@ -45,6 +45,10 @@ class LocationSearchViewModel: NSObject, ObservableObject{
         }
     }
     
+    func apiSignOut(){
+        SessionStore().signOut()
+    }
+    
     func locationSearch(forLocalSearchCompletion localSearch: MKLocalSearchCompletion, completion: @escaping MKLocalSearch.CompletionHandler){
         let searchRequest = MKLocalSearch.Request()
         searchRequest.naturalLanguageQuery = localSearch.title.appending(localSearch.subtitle)
@@ -94,6 +98,8 @@ class LocationSearchViewModel: NSObject, ObservableObject{
         pickUpTime = formatter.string(from: Date())
         dropOffTime = formatter.string(from: Date() + expectedTravelTime)
     }
+    
+
     
 }
 

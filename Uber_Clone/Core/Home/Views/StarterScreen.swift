@@ -3,8 +3,18 @@
 import SwiftUI
 
 struct StarterScreen: View {
+    @EnvironmentObject var session: SessionStore
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+       
+        VStack{
+            if self.session.session != nil{
+               HomeView()
+            }else{
+                SignInView()
+            }
+        }.onAppear{
+            session.listen()
+        }
     }
 }
 

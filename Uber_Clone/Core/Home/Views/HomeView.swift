@@ -6,6 +6,8 @@ struct HomeView: View {
 
     @State private var mapState = MapViewState.noInput
     @EnvironmentObject var locationViewModel: LocationSearchViewModel
+    @State var session = SessionStore()
+    @State private var showingAlert = false
     
     var body: some View {
 
@@ -16,6 +18,7 @@ struct HomeView: View {
                 
                 if mapState == .searchingForLocation{
                     LocationSearchView(mapState: $mapState)
+                        
                 } else if mapState == .noInput {
                     LocationSearchActivationView()
                         .padding(.top, 72)
@@ -35,12 +38,17 @@ struct HomeView: View {
                 RideRequestView()
                     .transition(.move(edge: .bottom))
             }
+            
+        }
+        .onAppear{
+            session.listen()
         }
         .edgesIgnoringSafeArea(.bottom)
         .onReceive(LocationManager.shared.$userLocation) { location in
             if let location = location {
                 locationViewModel.userLocation = location
             }
+        
         }
     }
 }
